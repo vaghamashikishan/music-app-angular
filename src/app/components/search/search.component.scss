@@ -1,0 +1,39 @@
+.text{
+  color: rgb(161, 161, 161);
+}
+
+.search{
+  width: 100%;
+  margin: auto;
+  padding: 1rem 1rem;
+  border-radius: 2rem;
+}
+
+.artists{
+
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  overflow: auto;
+}
+
+.artist{
+    border: 1px solid white;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.artist{
+  display: flex;
+}
+
+.artist .image{
+  width: 33%;
+  box-sizing: border-box;
+  margin-right: 1rem;
+}
+
+.image image{
+  max-height: 10px;
+  background-size: cover;
+}

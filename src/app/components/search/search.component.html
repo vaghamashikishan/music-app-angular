@@ -1,0 +1,25 @@
+<h1>Need some refreshment...?</h1>
+<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam tempore minima iusto officia
+  voluptatem
+  repellendus nam inventore blanditiis doloremque. Cum sed iure temporibus alias! Nam neque nulla eaque minus
+  temporibus?</p>
+
+<div class="search-div">
+  <input class="search" type="text" (keyup)="searchMusic()" [(ngModel)]="searchStr"
+    placeholder="Put your words here...">
+</div>
+
+<div class="artist-page">
+  <div class="artists" *ngFor="let artist of artists">
+    <div class="artist">
+      <div class="image">
+        <img src={{artist.images[2].url}} alt="image">
+      </div>
+      <div class="details">
+        <p>{{artist.name}}</p>
+        <p>Followers: {{artist.followers.total}}</p>
+        <p>Genre: {{artist.genre}}</p>
+      </div>
+    </div>
+  </div>
+</div>
