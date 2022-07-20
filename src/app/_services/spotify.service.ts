@@ -1,15 +1,16 @@
 import { HttpClient, HttpHeaders, HttpHeaderResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SpotifyService {
 
+  constructor(private _http: HttpClient) { }
+
   private searchUrl!: string;
-  private authorizationKey: any = 'Bearer BQCjdjuE_7KRrKjhYbXh1WP9KIKePVvuXvx4io08gJNgg0Cqj3qCxGoCmFKSPK5UoKwbjpDQTpj21Wc5I02mje0qcyx-9GE62ZZsgcrPjiD9N22SoYz1k4C0pfppo8wnCWejLIZFgUNHfnLWHXMuGqnpFQAW-5QLKSfqo104a7LXfHiiVnz_lJ0b5QEk7-A';
+  private authorizationKey: any = 'Bearer BQB56sqdugihGCxSQ52NGDdS1sRQdpSpnuaL-RIROOTtUWBdj2mjijVp_Hk_EbJZ6amjDHQULbocrqHle0msCiq5_AoHIIXr1Kbw1nSN3yCeGVGBTFYXq_QVVnlwkPkPFD3lSSiIpoi2XScXYo_rdC2D7BEKqqZ8zMKkbWFChsPpXrS1SeHPPuGfHouyC5Q';
 
   private httpsOptions = {
     headers: new HttpHeaders({
@@ -18,8 +19,6 @@ export class SpotifyService {
       'Authorization': this.authorizationKey
     })
   }
-
-  constructor(private _http: HttpClient) { }
 
   searchMusic(str: string): Observable<any> {
     this.searchUrl = `https://api.spotify.com/v1/search?q=${str}&type=artist`;

@@ -9,16 +9,19 @@
     placeholder="Put your words here...">
 </div>
 
-<div class="artist-page">
-  <div class="artists" *ngFor="let artist of artists">
-    <div class="artist">
-      <div class="image">
-        <img src={{artist.images[2].url}} alt="image">
-      </div>
-      <div class="details">
-        <p>{{artist.name}}</p>
-        <p>Followers: {{artist.followers.total}}</p>
-        <p>Genre: {{artist.genre}}</p>
+<div *ngIf="searchStr">
+  <div class="artist-page">
+    <div class="artists" *ngFor="let artist of artists">
+      <div class="artist">
+        <div class="image">
+          <img src={{artist.images[2].url}} alt="image">
+        </div>
+        <div class="details">
+          <p><a routerLink="/artist/{{artist.id}}">{{artist.name}}</a></p>
+          <p>Followers: {{artist.followers.total}}</p>
+          <div class="genre-container">Genre:</div>
+          <div class="genre" *ngFor="let item of artist.genres">{{item}}</div>
+        </div>
       </div>
     </div>
   </div>
