@@ -1,15 +1,25 @@
+
+
 .main-page{
+  position: relative;
+  height: 100vh;
   background-color: black;
-  min-height: 100vh;
 }
 
 .main{
-  margin-top: 0.5rem;
+  position: absolute;
+  top: 6rem;
+  background-color: black;
+
+  // margin-top: 5rem;
+  width: 100%;
+  // height: 100vh;
+  // border: 1px solid white;
   color: white;
 }
 
 
-.search-container{
-  width: 80%;
+.all-components{
+  width: 95%;
   margin: auto;
 }

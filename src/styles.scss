@@ -5,3 +5,10 @@
 
 /* Importing Datepicker SCSS file. */
 @import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+
+.fixed-header{
+  position: fixed;
+  width: 100%;
+  height: 5rem;
+  z-index: 2;
+}

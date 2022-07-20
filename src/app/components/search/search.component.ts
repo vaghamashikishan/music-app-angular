@@ -21,6 +21,7 @@ export class SearchComponent implements OnInit {
     this._spotifyservice.searchMusic(this.searchStr).subscribe(data => {
       this.data = data;
       this.artists = this.data.artists.items;
+      console.log('artist list');
       console.log(this.artists);
     });
   }

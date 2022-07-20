@@ -1,8 +1,38 @@
-<!-- <div class="full-page">
-  <div class="main">
-    <div class="header"></div>
-    <div class="content"></div>
+<div *ngIf="artistID">
+  <div class="full-page">
+    <div class="artist-main">
+      <div class="artist-header">
+        <div class="all-details">
+          <div class="img">
+            <img [src]="artistData.images[1].url" [ngStyle]="{width: '250px'}">
+          </div>
+          <div class="details">
+            <h1>{{artistData.name}}</h1>
+            <p>Followers: {{artistData.followers.total}}</p>
+            <div class="genre-container">
+              Genre:
+              <div class="genre" *ngFor="let item of artistData.genres">{{item}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="artist-content">
+        <div class="albums">
+          <div class="album-card" *ngFor="let album of albumData">
+            <div class="class-details">
+              <div class="album-img">
+                <img [src]="album.images[1].url" [ngStyle]="{height:'150px', width:'100%'}" alt="">
+              </div>
+            </div>
+            <br>
+            <div class="album-details">
+              <h3>{{album.name}}</h3>
+              <p>{{album.total_tracks}} songs</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div> -->
+</div>
 <!-- <p>{{artistID}}</p> -->
-<p>{{artistID}}</p>
