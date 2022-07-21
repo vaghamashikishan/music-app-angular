@@ -1,0 +1,26 @@
+<div class="full-page">
+  <div class="album-main">
+    <div class="album-header">
+      <div class="img">
+        <img src="{{albumData.images[0].url}}" [ngStyle]="{width: '250px', height:'250px'}">
+      </div>
+
+      <div class="album-info">
+        <div>
+          <div class="album-name">{{albumData.name}}</div>
+        </div>
+        <div class="details">
+          <p>{{albumData.total_tracks}} Songs</p>
+          <p>{{albumData.release_date}}</p>
+          <p>{{albumData.album_type}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="song-list">
+      <div class="song" *ngFor="let track of tracksDetails; index as i">
+        <div class="track-name">{{i+1}} ) &nbsp;&nbsp; {{track.name}}</div>
+        <div> {{(track.duration_ms/60000).toFixed(2)}} minutes</div>
+        <div><button routerLink="/artist/{{albumData.artists[0].id}}/album/{{albumID}}/track/{{track.id}}">PLAY</button>
+        </div>
+      </div>
+    </div>

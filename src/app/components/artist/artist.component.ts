@@ -26,13 +26,11 @@ export class ArtistComponent implements OnInit, AfterViewInit {
       // geeting artist data using service
       this._spotifyService.searchArtist(this.artistID).subscribe((data: any) => {
         this.artistData = data
-        console.log(data);
       });
 
       // getting album data
       this._spotifyService.getAlbum(this.artistID).subscribe((data: any) => {
         this.albumData = data.items
-        console.log(this.albumData);
       });
     })
   }

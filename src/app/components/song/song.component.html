@@ -1,0 +1,31 @@
+<!-- <div class="song-container">
+  <div class="img-container">
+    <img src="../../../assets/arijit.jpg" alt="">
+  </div>
+  <div class="audio-container">
+    <div class="controls">
+      <button class="player-button" (click)="onButtonClick(song)">
+        <svg *ngIf="!isPlay" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#3D3132">
+          <path fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+            clip-rule="evenodd" />
+        </svg>
+        <svg *ngIf="isPlay" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#3D3132">
+          <path fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z"
+            clip-rule="evenodd" />
+        </svg>
+      </button>
+      <input type="range" class="timeline" max="100" value="0" #slider>
+      <audio #song class="audio"
+        src="https://www.zapsplat.com/wp-content/uploads/2015/sound-effects-61905/zapsplat_multimedia_alert_chime_short_musical_notification_cute_child_like_001_64918.mp3?_=1"
+        controls="true" (ontimeupdate)="hi()"></audio>
+    </div>
+  </div>
+</div> -->
+
+<div *ngIf="songData">
+  <audio src={{songData.track_href}} id=”AudioSong” autoplay controls="true">
+
+  </audio>
+</div>

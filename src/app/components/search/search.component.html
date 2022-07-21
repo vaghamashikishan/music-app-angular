@@ -14,7 +14,7 @@
     <div class="artists" *ngFor="let artist of artists">
       <div class="artist">
         <div class="image">
-          <img src={{artist.images[2].url}} alt="image">
+          <img src={{artist.images[1].url}} alt="image" [ngStyle]="{width: '250px', height:'250px'}">
         </div>
         <div class="details">
           <p><a routerLink="/artist/{{artist.id}}">{{artist.name}}</a></p>

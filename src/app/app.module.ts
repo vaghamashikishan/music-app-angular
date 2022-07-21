@@ -15,11 +15,23 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SearchComponent } from './components/search/search.component';
 import { AboutComponent } from './components/about/about.component';
 import { ArtistComponent } from './components/artist/artist.component';
+import { AlbumComponent } from './components/album/album.component';
+import { SongComponent } from './components/song/song.component';
 
 const appRoutes: Routes = [
   { path: '', component: SearchComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'artist/:id', component: ArtistComponent }
+  {
+    path: 'artist/:id', children: [
+      { path: '', component: ArtistComponent },
+      {
+        path: 'album/:id2', children: [
+          { path: '', component: AlbumComponent },
+          { path: 'track/:id3', component: SongComponent }
+        ]
+      }
+    ]
+  }
 ]
 
 @NgModule({
@@ -28,7 +40,9 @@ const appRoutes: Routes = [
     NavbarComponent,
     SearchComponent,
     AboutComponent,
-    ArtistComponent
+    ArtistComponent,
+    AlbumComponent,
+    SongComponent
   ],
   imports: [
     BrowserModule,
