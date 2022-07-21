@@ -10,7 +10,7 @@ export class SpotifyService {
   constructor(private _http: HttpClient) { }
 
   private searchUrl!: string;
-  private authorizationKey: any = 'Bearer BQApjSuS5ZfR2u9IWlOXqmikr3yS1beZZbNuqPNTaLABvmryB2ZeujptM-y1GMrvD-1H_4GpVq9niiX9GSIbZ-wVJGQsTnVpJ4rNKJGGxzBYt2ueqbt7jvOFYWk1OOEm-Ks9cOPgP_iX3QKHurf6S36K5poYhdamNVwyKP225QTRo9KjwJD64umAxqMYRgE';
+  private authorizationKey: any = 'Bearer BQDzXmyVRiu_0Y9claBDPf_zdHL4JBwP1OrHMC6zAz4BdkA3pSCz9fbOfAaqK-7UBZ4Vy0ilxTjuBSZzwSOlOrK8yJe3jORHkDodSOtbLCPGuGoiGuzefIwbYEEVj4qH70UPfZlot_BLdL4dSxi8UErwSGJTuu8I06aY4iBqm8a9jMWLs2Uv9khXsg66lvw';
 
   private httpsOptions = {
     headers: new HttpHeaders({
@@ -46,7 +46,7 @@ export class SpotifyService {
   }
 
   getSongs(songId: any) {
-    this.searchUrl = `https://api.spotify.com/v1/audio-features/${songId}`;
+    this.searchUrl = `https://api.spotify.com/v1/tracks/${songId}`;
     return this._http.get(this.searchUrl, this.httpsOptions)
   }
 }

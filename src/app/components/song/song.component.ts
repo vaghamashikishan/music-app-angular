@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { RangeValueAccessor } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { SpotifyService } from 'src/app/_services/spotify.service';
@@ -10,6 +10,7 @@ import { SpotifyService } from 'src/app/_services/spotify.service';
 })
 export class SongComponent implements OnInit {
 
+  @ViewChild('slider') slider!: ElementRef<any>;
   constructor(private _activatedroute: ActivatedRoute, private _spotifyService: SpotifyService) { }
 
   songID: any;
@@ -22,15 +23,18 @@ export class SongComponent implements OnInit {
 
       this._spotifyService.getSongs(this.songID).subscribe((data: any) => {
         this.songData = data
-        console.log(this.songData);
-
+        console.log(data);
       });
     })
   }
 
-  // isPlay: boolean = false;
-  // onButtonClick(audioEl: HTMLAudioElement) {
-  //   this.isPlay = !this.isPlay;
-  //   const audioElement = document.querySelector('audio');
-  // }
+
+  isPlay: boolean = false;
+  onButtonClick(audioEl: HTMLAudioElement) {
+    this.isPlay = !this.isPlay;
+    (this.isPlay) ? audioEl.play() : audioEl.pause();
+    console.log((this.slider.nativeElement.value));
+
+    this.slider.nativeElement.value = "50";
+  }
 }

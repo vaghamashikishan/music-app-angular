@@ -2,7 +2,7 @@
   <div class="album-main">
     <div class="album-header">
       <div class="img">
-        <img src="{{albumData.images[0].url}}" [ngStyle]="{width: '250px', height:'250px'}">
+        <img src="{{albumData.images[0].url}}" [ngStyle]="{width: '150px', height:'150px'}">
       </div>
 
       <div class="album-info">
@@ -22,5 +22,8 @@
         <div> {{(track.duration_ms/60000).toFixed(2)}} minutes</div>
         <div><button routerLink="/artist/{{albumData.artists[0].id}}/album/{{albumID}}/track/{{track.id}}">PLAY</button>
         </div>
+        <!-- <div><audio class="audio" src="{{track.preview_url}}" controls="true"></audio></div> -->
       </div>
     </div>
+  </div>
+</div>

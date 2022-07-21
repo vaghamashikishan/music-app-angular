@@ -21,11 +21,14 @@ export class AlbumComponent implements OnInit {
       // geeting artist data using service
       this._spotifyService.getAlbumById(this.albumID).subscribe((data: any) => {
         this.albumData = data
+        console.log(this.albumData);
+
       });
 
       // getting album data
       this._spotifyService.getTracks(this.albumID).subscribe((data: any) => {
         this.tracksDetails = data.items;
+        console.log(this.tracksDetails);
       });
     })
   }
