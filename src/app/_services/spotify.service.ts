@@ -10,7 +10,7 @@ export class SpotifyService {
   constructor(private _http: HttpClient) { }
 
   private searchUrl!: string;
-  private authorizationKey: any = 'Bearer BQDzXmyVRiu_0Y9claBDPf_zdHL4JBwP1OrHMC6zAz4BdkA3pSCz9fbOfAaqK-7UBZ4Vy0ilxTjuBSZzwSOlOrK8yJe3jORHkDodSOtbLCPGuGoiGuzefIwbYEEVj4qH70UPfZlot_BLdL4dSxi8UErwSGJTuu8I06aY4iBqm8a9jMWLs2Uv9khXsg66lvw';
+  private authorizationKey: any = 'Bearer BQAOyJl8ud2S4TX-UXcwFY6sCpRFHJ6nSS0P2_p0y-IJgHHM0RqLFSN8tXqs2EQw60cC_2wutpQiI_w3vWoMrRh9FeXZ1w4p8qWRTztzCitZywHPp2eS19r59eK2PWEsdPRxH2LYUPLpACl643xANaYMoc5vjsP1rYVvpydtApmwAJWrIM6n8UDNGShiZOs';
 
   private httpsOptions = {
     headers: new HttpHeaders({

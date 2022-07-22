@@ -23,14 +23,14 @@ export class SongComponent implements OnInit {
 
       this._spotifyService.getSongs(this.songID).subscribe((data: any) => {
         this.songData = data
-        console.log(data);
+        console.log(this.songData);
       });
     })
   }
 
 
   isPlay: boolean = false;
-  onButtonClick(audioEl: HTMLAudioElement) {
+  onButtonClick(audioEl: HTMLMediaElement) {
     this.isPlay = !this.isPlay;
     (this.isPlay) ? audioEl.play() : audioEl.pause();
     console.log((this.slider.nativeElement.value));

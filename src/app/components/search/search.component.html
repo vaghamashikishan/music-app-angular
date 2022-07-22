@@ -17,7 +17,7 @@
           <img src={{artist.images[1].url}} alt="image" [ngStyle]="{width: '250px', height:'250px'}">
         </div>
         <div class="details">
-          <p><a routerLink="/artist/{{artist.id}}">{{artist.name}}</a></p>
+          <h3 routerLink="/artist/{{artist.id}}">{{artist.name}}</h3>
           <p>Followers: {{artist.followers.total}}</p>
           <div class="genre-container">Genre:</div>
           <div class="genre" *ngFor="let item of artist.genres">{{item}}</div>

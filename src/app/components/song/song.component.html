@@ -23,7 +23,9 @@
   </div>
 </div>
 <!-- </div> -->
-<!-- <div *ngIf="songData">
-  <audio #audioTag class="audio" src="{{songData.preview_url}}" controls="true"></audio>
-  <p>{{songData.uri}}</p>
-</div> -->
+
+<ng-container *ngIf="!songData.preview_url">
+  <h3 [ngStyle]="{textAlign:'center', color:'#b0b0b0', backgroundColor:'#341111', marginTop:'-5rem'}">Ooops...Spotify
+    doesn't allow us to
+    play the song...</h3>
+</ng-container>
